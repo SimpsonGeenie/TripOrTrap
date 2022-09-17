@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="3dp"
+    android:background="@android:color/holo_green_light"
+    android:orientation="vertical"
+    tools:context="com.zinyoflamp.totmain2.TrapActionFac.TrapUnlocklist">
+
+    <Button
+        android:id="@+id/map_btnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="20dp"
+        android:background="@drawable/buttoncircle"
+        android:text="BACK"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <GridView
+
+        android:id="@+id/forunlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="@android:color/holo_orange_light"
+        android:columnWidth="90dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"></GridView>
+
+</LinearLayout>

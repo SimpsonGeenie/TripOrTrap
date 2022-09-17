@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:onClick="onButtonClick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/resulttext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID Check를 해주세요.(필수)"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edittrapperid"
+            android:layout_width="0px"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="7"
+            android:background="@android:color/white"
+            android:hint="사용중인 Email을 기재해 주세요."
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/background_dark" />
+
+        <Button
+            android:id="@+id/idcheck"
+            android:onClick="onButtonClick"
+            android:layout_width="0px"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            android:background="@drawable/sagak"
+            android:text="Check"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edittrapperpw"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="사용하실 비밀번호를 입력해 주세요.(8글자 이상)"
+        android:inputType="textPassword"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/background_dark" />
+
+    <EditText
+        android:id="@+id/edittrapperpwre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="사용하실 비밀번호를 다시 한 번 입력해 주세요."
+        android:inputType="textPassword"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/background_dark" />
+
+    <EditText
+        android:id="@+id/edittrappername"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="성함을 기재해 주세요.(1글자 이상)"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/background_dark" />
+
+    <EditText
+        android:id="@+id/edittrappernickname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="사용하실 닉네임을 입력해 주세요.(2글자 이상)"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/background_dark" />
+
+    <EditText
+        android:id="@+id/edittrapperphone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="사용중인 휴대폰 번호를 입력해 주세요."
+        android:inputType="phone"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/background_dark" />
+
+    <Button
+        android:id="@+id/joinstart"
+        android:onClick="onButtonClick"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/sagak"
+        android:text="회원 가입"
+        android:textColor="@android:color/white" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

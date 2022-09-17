@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "756611422094",
+    "firebase_url": "https://triportrap-f0e43.firebaseio.com",
+    "project_id": "triportrap-f0e43",
+    "storage_bucket": "triportrap-f0e43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756611422094:android:8d42d14bd636e09e",
+        "android_client_info": {
+          "package_name": "com.zinyoflamp.totmain2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756611422094-7taoa9ae3uae5rk94cesup48c9db7qjk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zinyoflamp.totmain2",
+            "certificate_hash": "8578544adf28f3044c8b6372d9b574d88fc0ad39"
+          }
+        },
+        {
+          "client_id": "756611422094-cl1qhk20o07aobvbuul1t4ogiqrd9os0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXTXtSWIHOfzvzGePM_MtA8c4P4_IcASk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756611422094-cl1qhk20o07aobvbuul1t4ogiqrd9os0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

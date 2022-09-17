@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zinyoflamp.totmain2">
+
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <meta-data android:name="com.kakao.sdk.AppKey" android:value="b14ee6e62289db454eb1929b136266a1"/>
+    <meta-data android:name="com.kakao.sdk.kakaonavi.useWebView" android:value="false" />
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_icon"
+        android:resource="@drawable/totlogo4" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/totlogo3"
+        android:label="Trip Or Trap"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true">
+
+        <activity android:name=".MainView.Intro" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity android:name=".MainView.MainActivity"
+            android:hardwareAccelerated="false">
+        </activity>
+
+        <activity android:name=".Member.Contact">
+        </activity>
+        <activity android:name=".Member.MyAccount">
+        </activity>
+        <activity android:name=".Member.JoinForm">
+        </activity>
+        <activity android:name=".Member.FixMyForm">
+        </activity>
+        <activity android:name=".Member.Loginact1">
+        </activity>
+
+        <activity android:name=".TrapActionFac.MakeaTrap">
+        </activity>
+        <activity android:name=".TrapActionFac.FindMyTrap">
+        </activity>
+        <activity android:name=".TrapActionFac.TrapUnlocklist">
+        </activity>
+        <activity android:name=".TrapActionFac.UnlockATrap">
+        </activity>
+        <activity android:name=".TrapActionFac.WhereIAm">
+        </activity>
+        <activity android:name=".TrapActionFac.TrapRanking">
+        </activity>
+        <activity android:name=".TrapActionFac.MyUnlockView">
+        </activity>
+
+        <activity android:name=".TripActionFac.TripMapViewActivity">
+        </activity>
+        <activity android:name=".TripActionFac.TripRecommend">
+        </activity>
+        <activity android:name=".TripActionFac.TripRecommendMapView">
+        </activity>
+        <activity android:name=".TripActionFac.TripWebSearch">
+        </activity>
+
+        <activity android:name=".MainView.OpenglTest">
+        </activity>
+
+
+        <activity android:name=".QnaBbs.QnaList">
+        </activity>
+        <activity android:name=".QnaBbs.QnaWrite">
+        </activity>
+        <activity android:name=".QnaBbs.QnaFix">
+        </activity>
+        <activity android:name=".QnaBbs.QnaShow">
+        </activity>
+        <activity android:name=".Notice.NotList">
+        </activity>
+        <activity android:name=".Notice.NotShow">
+        </activity>
+
+
+
+    </application>
+    <service
+        android:name=".MyFirebaseInstanceIDService">
+        <intent-filter>
+            <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+        </intent-filter>
+    </service>
+    <service
+        android:name=".MyFirebaseMessagingService">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+        </intent-filter>
+    </service>
+
+</manifest>

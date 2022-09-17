@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="num">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+
+    <string-array name="trapcamoption">
+        <item>낮</item>
+        <item>밤</item>
+        <item>흐린날</item>
+        <item>자동</item>
+        <item>플래쉬ON</item>
+    </string-array>
+
+
+
+</resources>
