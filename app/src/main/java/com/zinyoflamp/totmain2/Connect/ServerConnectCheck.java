@@ -25,8 +25,9 @@ public class ServerConnectCheck {
         String homeurl2="http://192.168.219.147:8889/";
         String picsurl="http://mustory.ivyro.net/tot/";
         String homeurl3="http://totserver.mooo.com:8088/";
+        String homeurl4="3.34.253.49:8088/";
 
-        String urlpath[]={schoolurl, homeurl1, homeurl2, picsurl, homeurl3};
+        String urlpath[]={schoolurl, homeurl1, homeurl2, picsurl, homeurl3, homeurl4};
         return urlpath[type];
     }
 

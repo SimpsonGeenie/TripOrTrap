@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 33
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.zinyoflamp.totmain2"
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -16,30 +17,43 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/NOTICE'
+        resources {
+            excludes += ['META-INF/LICENSE', 'META-INF/NOTICE']
+        }
+    }
+    viewBinding {
+        enabled = true
     }
 
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile group: project.KAKAO_SDK_GROUP, name: 'kakaonavi', version: project.KAKAO_SDK_VERSION
-    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
-    compile files('libs/libDaumMapAndroid.jar');
-    compile 'gun0912.ted:tedpermission:2.0.0'
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.squareup.picasso:picasso:2.3.3'
-    compile 'com.google.code.gson:gson:2.8.0'
-    compile 'com.squareup.okhttp3:okhttp:3.8.0'
-    compile 'com.mcxiaoke.volley:library:1.0.19'
-
-    testCompile 'junit:junit:4.12'
-    compile 'com.google.android.gms:play-services-maps:11.0.4'
+    //implementation group: project.KAKAO_SDK_GROUP, name: 'kakaonavi', version: project.KAKAO_SDK_VERSION
+    //implementation group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
+    //implementation files('libs/libDaumMapAndroid.jar');
+    //implementation 'gun0912.ted:tedpermission:2.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.+'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.squareup.picasso:picasso:2.3.3'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    implementation 'com.mcxiaoke.volley:library:1.0.19'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha04'
+    testImplementation 'junit:junit:4.12'
+    //implementation 'com.google.android.gms:play-services-maps:11.0.4'
+    implementation "com.kakao.sdk:v2-all:2.11.1" // 전체 모듈 설치, 2.11.0 버전부터 지원
+    implementation "com.kakao.sdk:v2-user:2.11.1" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.11.1" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-story:2.11.1" // 카카오스토리
+    implementation "com.kakao.sdk:v2-share:2.11.1" // 메시지(카카오톡 공유)
+    implementation "com.kakao.sdk:v2-navi:2.11.1" // 카카오내비
+    implementation "com.kakao.sdk:v2-friend:2.11.1" // 카카오톡 소셜 피커, 리소스 번들 파일 포함
 }

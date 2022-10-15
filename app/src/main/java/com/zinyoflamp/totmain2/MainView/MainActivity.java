@@ -1,38 +1,38 @@
 package com.zinyoflamp.totmain2.MainView;
 
-import android.app.DownloadManager;
+import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.os.Environment;
-import android.os.Handler;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.zinyoflamp.totmain2.Member.*;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.zinyoflamp.totmain2.Member.LoginSession;
+import com.zinyoflamp.totmain2.Member.Loginact1;
+import com.zinyoflamp.totmain2.Member.MyAccount;
 import com.zinyoflamp.totmain2.Notice.NotList;
 import com.zinyoflamp.totmain2.QnaBbs.QnaList;
-import com.zinyoflamp.totmain2.TrapActionFac.*;
 import com.zinyoflamp.totmain2.R;
-import com.zinyoflamp.totmain2.TripActionFac.TripRecommend;
+import com.zinyoflamp.totmain2.TrapActionFac.FindMyTrap;
+import com.zinyoflamp.totmain2.TrapActionFac.MakeaTrap;
+import com.zinyoflamp.totmain2.TrapActionFac.MyUnlockView;
+import com.zinyoflamp.totmain2.TrapActionFac.TrapRanking;
+import com.zinyoflamp.totmain2.TrapActionFac.WhereIAm;
 import com.zinyoflamp.totmain2.TripActionFac.TripMapViewActivity;
+import com.zinyoflamp.totmain2.TripActionFac.TripRecommend;
 import com.zinyoflamp.totmain2.TripActionFac.TripWebSearch;
 
-import java.io.File;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     int images[] = {R.drawable.bulgugsa1,
             R.drawable.mainpung,
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.pyramid,
             R.drawable.busannight};
 
-    ViewPager vp;
+    ViewPager2 vp;
     Handler mHandler = new Handler();
     boolean mRunning;
     public Thread mThread;
@@ -70,15 +70,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activitymain);
-
         //mMainHandler = new SendMassgeHandler();
-
-
         imgmain1=(ImageView)findViewById(R.id.imgmain);
-
-        vp = (ViewPager)findViewById(R.id.viewPager);
+        vp = (ViewPager2)findViewById(R.id.viewPager);
         //vp.setBackgroundResource(R.drawable.pyramid);
-        vp.setAdapter(new pagerAdapter(getSupportFragmentManager()));
+
         vp.setCurrentItem(1);
         mThread = new ImageThread();
 
@@ -96,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    protected void drawBigImage(ViewPager vp, int resId) {
+
+    protected void drawBigImage(ViewPager2 vp, int resId) {
         try {
 
             BitmapFactory.Options options = new BitmapFactory.Options();
@@ -133,30 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private class pagerAdapter extends FragmentStatePagerAdapter {
-        public pagerAdapter(android.support.v4.app.FragmentManager fm) {
-            super(fm);
-        }
 
-        @Override
-        public android.support.v4.app.Fragment getItem(int position) {
-            switch (position) {
-                case 0:
-                    return new TripFragment();
-                case 1:
-                    return new OptionFragment();
-                case 2:
-                    return new TrapFragment();
-                default:
-                    return null;
-            }
-        }
-
-        @Override
-        public int getCount() {
-            return 3;
-        }
-    }
 
     class ImageThread extends Thread {
         int duration = 3000;

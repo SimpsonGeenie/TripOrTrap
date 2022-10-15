@@ -32,7 +32,8 @@
         android:hardwareAccelerated="true"
         android:largeHeap="true">
 
-        <activity android:name=".MainView.Intro" >
+        <activity android:name=".MainView.Intro"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
